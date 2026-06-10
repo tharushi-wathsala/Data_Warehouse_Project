@@ -1,0 +1,391 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/28/2026 12:31:32 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-GFKCQ07P"
+  DTS:CreatorName="LAPTOP-GFKCQ07P\Tharushi"
+  DTS:DTSID="{A41283C9-7F51-479B-9D62-4AB96EFA5681}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{D2C9F268-B452-4E5E-8542-7DBBC26E66D4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_DW.Sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{31EFFB51-55A4-4852-A79E-829C4D966A55}"
+      DTS:ObjectName="LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_DW.Sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-GFKCQ07P\MSSQLSERVER2;User ID=Sa;Initial Catalog=flight_DW;Provider=SQLOLEDB.1;Application Name=SSIS-Package2-{31EFFB51-55A4-4852-A79E-829C4D966A55}LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_DW.Sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp7hpir3HVECrjBjCUTl98wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA2Hhdtn+5fLOmHoqvkcGXv6bzuVUDKk9d9kfqB+L8W1wAAAAAOgAAAAAIAACAAAAA2La4uSwH2cZGGak4YiPBDiBM8bbEH77zE9K4DRGl3oyAAAABRr+UD8Buwnu6uGXoeikq8ho9MyLGqCBYfHAGve5ZhJEAAAAAXhmUNMlQXNv0ErKOqwCWZLgKkSlDr0a+rZJXkdvi06Jcb4UAGfBh7kCkd7LpZSrtKc7PGiocVmDooXWXe+Au/</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C9DB5871-3F50-4ACC-A1C7-9786AC039939}"
+      DTS:ObjectName="LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-GFKCQ07P\MSSQLSERVER2;User ID=Sa;Initial Catalog=flight_Staging;Provider=SQLOLEDB.1;Application Name=SSIS-Package2-{C9DB5871-3F50-4ACC-A1C7-9786AC039939}LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp7hpir3HVECrjBjCUTl98wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAUKiEyc50cYtSxGQVmk5eSjSSCkCWCjRh+OD3W4I0vvgAAAAAOgAAAAAIAACAAAABwjgMU55UrcOSckS1AAaLUtkmyhHB2QI83CtIT8eSpvyAAAADmr2nV8vziWU5GU0l+/2M/mXkmSkUCAnjSGWec0XR0CkAAAAA8dP/GnsnLJGJkrXvl3tW6OnJJm2WMlcuodVvXkaeF8UhFvyNklnwGVuakfygtV4QfxflGHfJ6SRBETUBK+FgE</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Update Fact Completion Time"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AE5F66C6-B944-4372-85F7-2BFE1A81C3E4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Fact Completion Time"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Update Fact Completion Time\CompletionTime Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="CompletionTime Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Fact Completion Time\CompletionTime Source.Connections[FlatFileConnection]"
+                  connectionManagerID="{9FC9434E-71CF-4579-8440-2C4DDFADCD4E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FF_FlightCompletionTime]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].Columns[FlightExperienceID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].ExternalColumns[FlightExperienceID]"
+                      length="50"
+                      lineageId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].Columns[FlightExperienceID]"
+                      name="FlightExperienceID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].Columns[accm_txn_complete_time]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].ExternalColumns[accm_txn_complete_time]"
+                      length="50"
+                      lineageId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].Columns[accm_txn_complete_time]"
+                      name="accm_txn_complete_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].ExternalColumns[FlightExperienceID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FlightExperienceID" />
+                    <externalMetadataColumn
+                      refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].ExternalColumns[accm_txn_complete_time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="accm_txn_complete_time" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Fact Completion Time\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.FactFlightExperience
+SET accm_txn_complete_time = ?
+WHERE FlightExperienceID = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Fact Completion Time\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_DW.Sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_DW.Sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input].Columns[accm_txn_complete_time]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="accm_txn_complete_time"
+                      externalMetadataColumnId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].Columns[accm_txn_complete_time]" />
+                    <inputColumn
+                      refId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input].Columns[FlightExperienceID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FlightExperienceID"
+                      externalMetadataColumnId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output].Columns[FlightExperienceID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Fact Completion Time\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Fact Completion Time\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Fact Completion Time\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Fact Completion Time\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Fact Completion Time\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Fact Completion Time\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Update Fact Completion Time.Paths[Flat File Source Output]"
+              endId="Package\Update Fact Completion Time\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Flat File Source Output"
+              startId="Package\Update Fact Completion Time\CompletionTime Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\Update Fact Completion Time"
+          TopLeft="145.499992350738,20.2333332308796" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Update Fact Completion Time">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Update Fact Completion Time\CompletionTime Source"
+          TopLeft="254.166652779613,58.9333329235183" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Update Fact Completion Time\OLE DB Command"
+          TopLeft="408.333311022985,174.199998788635" />
+        <EdgeLayout
+          Id="Package\Update Fact Completion Time.Paths[Flat File Source Output]"
+          TopLeft="349.366652779613,100.533332923518">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142.566658243372,73.6666658651167"
+              Start="0,0"
+              End="142.566658243372,66.1666658651167">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.8333329325583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.8333329325583"
+                    Point2="0,36.8333329325583"
+                    Point3="4,36.8333329325583" />
+                  <mssgle:LineSegment
+                    End="138.566658243372,36.8333329325583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="138.566658243372,36.8333329325583"
+                    Point2="142.566658243372,36.8333329325583"
+                    Point3="142.566658243372,40.8333329325583" />
+                  <mssgle:LineSegment
+                    End="142.566658243372,66.1666658651167" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LAPTOP-GFKCQ07P_MSSQLSERVER2.flight_DW.Sa"
+  DTS:DTSID="{C3B83F8D-AEE6-4417-99CF-7DA08CC00D5B}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=LAPTOP-GFKCQ07P\MSSQLSERVER2;User ID=Sa;Initial Catalog=flight_DW;Provider=SQLOLEDB.1;Application Name=SSIS-Flight_DW_ETL-{C3B83F8D-AEE6-4417-99CF-7DA08CC00D5B}LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_DW.Sa;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp7hpir3HVECrjBjCUTl98wAAAAACAAAAAAAQZgAAAAEAACAAAACY4ugGR1OC7Q1vopgrs5Wsm6vWeGRKnFs5cuCPCRNDEgAAAAAOgAAAAAIAACAAAAANgUDiGyuFshZHl77U7g/vJkjnhkSn9s8NB1hJ9Jn8A4AAAADdLuCf37CYvD9eB1ynLpK3nwBMw5uf6XZTuyXMmXJjNAK2ca+i7BcWjpw2TuwZK9pMRbnrk1VzIW81M0u040TWJEuPpLH51DPJsgFb+i0s0TZ5a0FVh+mj/l4EFFyEThrwcm4Xg5kTmlI0j1cZe7SIZ2WtOpCGuGMk43n3jlmXdkAAAAAPZanUQJDfwiyNuFTBwrwOj+7toyo3tgwsIQ6FB76QVD1JZNGuuuylYZgzXz1LnsrbRDYiH/l2467u+rbQHfOo</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

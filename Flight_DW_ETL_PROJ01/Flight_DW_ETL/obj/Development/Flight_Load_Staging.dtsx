@@ -1,0 +1,2849 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/28/2026 12:25:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-GFKCQ07P"
+  DTS:CreatorName="LAPTOP-GFKCQ07P\Tharushi"
+  DTS:DTSID="{BB8670DA-C98F-4F4C-86A3-37B3EEFF4562}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Flight_Load_Staging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{84977692-4E12-440E-9F00-04E541AD6666}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{1BC0FFA9-99B4-4A09-8F93-51C3DCF746BB}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\SLIIT WORKS\Y3S2\DWBI\project\Service_Rating.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{548FDE40-1E0C-43B8-AF51-04BCC1981939}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SLIIT WORKS\Y3S2\DWBI\project\Passenger_Data.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{84D4C7CB-8C4C-41B1-A61B-1E9FFFDC1CD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{58EE4F7D-3A4C-4FB6-9AAD-C0046E6A8AEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer Type"
+              DTS:DTSID="{2D1526A8-0A36-49A2-AE4E-8863C122190F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{6A6970FA-A7F3-4EDD-9E4F-133862596A2C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5C123706-1A04-47C7-A325-B954A77BBA72}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SLIIT WORKS\Y3S2\DWBI\project\Travel_class.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClassID"
+              DTS:DTSID="{FB6C5736-0052-499A-A279-188118D30BA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClassName"
+              DTS:DTSID="{8112337E-0B3A-4CD3-8DA4-FC8A9E932949}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E351EB6B-F930-40B1-A269-50ED76CCACE7}"
+      DTS:ObjectName="Flat File Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SLIIT WORKS\Y3S2\DWBI\project\Travel_Type.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Travel Type ID"
+              DTS:DTSID="{6FC214FC-9080-48DD-8ED6-44E58B52E287}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type of Travel"
+              DTS:DTSID="{DC146338-9132-468C-B647-94FC92B2EACA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0C070F74-9489-4C96-A302-7BBE7A609A93}"
+      DTS:ObjectName="Flat File Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SLIIT WORKS\Y3S2\DWBI\project\Passenger_Data.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PassengerID"
+              DTS:DTSID="{6987A62B-9AFD-415F-916C-5BD8F0E6E877}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{E33BB957-DB35-4F6E-BDAF-FF119058D38B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer Type"
+              DTS:DTSID="{58DE2272-CBA4-47AE-ADFA-2331F0458E4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{687DEC3A-AD35-4078-914C-C4E5B48FDC77}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0E32434E-F129-4FFC-8CEF-886529BFBDFA}"
+      DTS:ObjectName="Flat File Connection Manager 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SLIIT WORKS\Y3S2\DWBI\project\Passenger_Data.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PassengerID"
+              DTS:DTSID="{8AFBD8F5-A935-4186-B2E9-BE406C0163CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{CD531FDC-4C0E-49F4-B8F4-B35BF8FDEDDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer Type"
+              DTS:DTSID="{CD671065-3A72-42CF-9363-BB9C13BFE46D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{C539E697-0EC8-418A-971F-B81EB3855305}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B44C8435-E507-48B7-8DFF-C559FF8A3BEF}"
+      DTS:ObjectName="LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-GFKCQ07P\MSSQLSERVER2;User ID=Sa;Initial Catalog=flight_Staging;Provider=SQLOLEDB.1;Application Name=SSIS-Flight_Load_Staging-{B44C8435-E507-48B7-8DFF-C559FF8A3BEF}LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp7hpir3HVECrjBjCUTl98wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACAmtRvykgXsUqMzD1VqXMv1lZScJldI81XAkeVF2X8BwAAAAAOgAAAAAIAACAAAABvADHuvSCbY9D5bN7iv5u87qaqH97x8jirXX+vrpJ0XyAAAAAb9vBWOxwBLKW0s/zUvMTQG0dVRXVfn8tNR26+jhyiTUAAAAAhzDCFznWCBhuZVc3FRK/fOv66A4qhsus+HaRzJzOPhl5n8cCapetJKcmgIjMqCATQrVnar40bamjnTXH1Mo7f</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute Flight_Load_DW"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{66240151-6950-4931-8F96-0DDF78992A76}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Flight_Load_DW"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Flight_Load_DW.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load FlightExperience to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A3697D63-DDEA-48F4-9F7A-EC220702612B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load FlightExperience to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load FlightExperience to Staging\FlightExperience Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="FlightExperience Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FlightExperience]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load FlightExperience to Staging\FlightExperience Source.Connections[OleDbConnection]"
+                  connectionManagerID="{408BD30C-F5C6-4C49-A689-B3F0DE2DBBCE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-GFKCQ07P_MSSQLSERVER2.flight_experienceSourceDB.Sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[FlightExperienceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[FlightExperienceID]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[FlightExperienceID]"
+                      name="FlightExperienceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[PassengerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[PassengerID]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[PassengerID]"
+                      name="PassengerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[TravelTypeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[TravelTypeID]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[TravelTypeID]"
+                      name="TravelTypeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[ClassID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[ClassID]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[ClassID]"
+                      name="ClassID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[FlightDistance]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[FlightDistance]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[FlightDistance]"
+                      name="FlightDistance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[DepartureDelayMinutes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[DepartureDelayMinutes]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[DepartureDelayMinutes]"
+                      name="DepartureDelayMinutes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[ArrivalDelayMinutes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[ArrivalDelayMinutes]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[ArrivalDelayMinutes]"
+                      name="ArrivalDelayMinutes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[SatisfactionStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[SatisfactionStatus]"
+                      length="30"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[SatisfactionStatus]"
+                      name="SatisfactionStatus"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[FlightExperienceID]"
+                      dataType="i4"
+                      name="FlightExperienceID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[PassengerID]"
+                      dataType="i4"
+                      name="PassengerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[TravelTypeID]"
+                      dataType="i4"
+                      name="TravelTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[ClassID]"
+                      dataType="i4"
+                      name="ClassID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[FlightDistance]"
+                      dataType="i4"
+                      name="FlightDistance" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[DepartureDelayMinutes]"
+                      dataType="i4"
+                      name="DepartureDelayMinutes" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[ArrivalDelayMinutes]"
+                      dataType="i4"
+                      name="ArrivalDelayMinutes" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].ExternalColumns[SatisfactionStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SatisfactionStatus" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[FlightExperienceID]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[FlightExperienceID]"
+                      name="FlightExperienceID" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[PassengerID]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[PassengerID]"
+                      name="PassengerID" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[TravelTypeID]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[TravelTypeID]"
+                      name="TravelTypeID" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[ClassID]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[ClassID]"
+                      name="ClassID" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[FlightDistance]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[FlightDistance]"
+                      name="FlightDistance" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[DepartureDelayMinutes]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[DepartureDelayMinutes]"
+                      name="DepartureDelayMinutes" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[ArrivalDelayMinutes]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[ArrivalDelayMinutes]"
+                      name="ArrivalDelayMinutes" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[SatisfactionStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[SatisfactionStatus]"
+                      name="SatisfactionStatus" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FlightExperience Staging Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgFlightExperience]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].Columns[FlightExperienceID]"
+                      cachedDataType="i4"
+                      cachedName="FlightExperienceID"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightExperienceID]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[FlightExperienceID]" />
+                    <inputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].Columns[PassengerID]"
+                      cachedDataType="i4"
+                      cachedName="PassengerID"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[PassengerID]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[PassengerID]" />
+                    <inputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].Columns[TravelTypeID]"
+                      cachedDataType="i4"
+                      cachedName="TravelTypeID"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[TravelTypeID]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[TravelTypeID]" />
+                    <inputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].Columns[ClassID]"
+                      cachedDataType="i4"
+                      cachedName="ClassID"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassID]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[ClassID]" />
+                    <inputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].Columns[FlightDistance]"
+                      cachedDataType="i4"
+                      cachedName="FlightDistance"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightDistance]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[FlightDistance]" />
+                    <inputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].Columns[DepartureDelayMinutes]"
+                      cachedDataType="i4"
+                      cachedName="DepartureDelayMinutes"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepartureDelayMinutes]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[DepartureDelayMinutes]" />
+                    <inputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].Columns[ArrivalDelayMinutes]"
+                      cachedDataType="i4"
+                      cachedName="ArrivalDelayMinutes"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArrivalDelayMinutes]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[ArrivalDelayMinutes]" />
+                    <inputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].Columns[SatisfactionStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="SatisfactionStatus"
+                      externalMetadataColumnId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[SatisfactionStatus]"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output].Columns[SatisfactionStatus]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightExperienceID]"
+                      dataType="i4"
+                      name="FlightExperienceID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[PassengerID]"
+                      dataType="i4"
+                      name="PassengerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[TravelTypeID]"
+                      dataType="i4"
+                      name="TravelTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassID]"
+                      dataType="i4"
+                      name="ClassID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightDistance]"
+                      dataType="i4"
+                      name="FlightDistance" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepartureDelayMinutes]"
+                      dataType="i4"
+                      name="DepartureDelayMinutes" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArrivalDelayMinutes]"
+                      dataType="i4"
+                      name="ArrivalDelayMinutes" />
+                    <externalMetadataColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[SatisfactionStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SatisfactionStatus" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load FlightExperience to Staging.Paths[OLE DB Source Output]"
+              endId="Package\Load FlightExperience to Staging\FlightExperience Staging Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load FlightExperience to Staging\FlightExperience Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Passenger to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{9C985AF9-F810-4CE9-A8B0-E25C3530BBE6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Passenger to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Passenger to Staging\Passenger Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Passenger Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Passenger to Staging\Passenger Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="10"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Customer Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].ExternalColumns[Customer Type]"
+                      length="50"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Customer Type]"
+                      name="Customer Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      length="50"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[PassengerID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].ExternalColumns[PassengerID]"
+                      length="50"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[PassengerID]"
+                      name="PassengerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].ExternalColumns[Customer Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Customer Type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].ExternalColumns[PassengerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PassengerID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Passenger to Staging\Passenger Staging Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Passenger Staging Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgPassenger]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Passenger to Staging\Passenger Staging Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].Columns[Customer Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Customer Type"
+                      externalMetadataColumnId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerType]"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[Customer Type]" />
+                    <inputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].Columns[PassengerID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PassengerID"
+                      externalMetadataColumnId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[PassengerID]"
+                      lineageId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output].Columns[PassengerID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[PassengerID]"
+                      dataType="i4"
+                      name="PassengerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CustomerType" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Passenger to Staging\Passenger Staging Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Passenger to Staging\Passenger Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Passenger to Staging\Passenger Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Passenger to Staging\Passenger Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Passenger to Staging.Paths[Flat File Source Output]"
+              endId="Package\Load Passenger to Staging\Passenger Staging Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Passenger to Staging\Passenger Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load ServiceRating to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7C425131-4CD2-42ED-818B-88805B96FA70}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load ServiceRating to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load ServiceRating to Staging\ServiceRating Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="ServiceRating Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ServiceRating to Staging\ServiceRating Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Rating ID ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Rating ID ]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Rating ID ]"
+                      name="Rating ID "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Flight Experience ID ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Flight Experience ID ]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Flight Experience ID ]"
+                      name="Flight Experience ID "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight wifi service]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Inflight wifi service]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight wifi service]"
+                      name="Inflight wifi service"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Departure/Arrival time convenient]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Departure/Arrival time convenient]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Departure/Arrival time convenient]"
+                      name="Departure/Arrival time convenient"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Ease of Online booking]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Ease of Online booking]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Ease of Online booking]"
+                      name="Ease of Online booking"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Gate location]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Gate location]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Gate location]"
+                      name="Gate location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Food and drink]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Food and drink]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Food and drink]"
+                      name="Food and drink"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Online boarding]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Online boarding]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Online boarding]"
+                      name="Online boarding"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Seat comfort]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Seat comfort]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Seat comfort]"
+                      name="Seat comfort"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight entertainment]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Inflight entertainment]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight entertainment]"
+                      name="Inflight entertainment"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[On-board service]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[On-board service]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[On-board service]"
+                      name="On-board service"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Leg room service]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Leg room service]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Leg room service]"
+                      name="Leg room service"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Baggage handling]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Baggage handling]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Baggage handling]"
+                      name="Baggage handling"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Checkin service]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Checkin service]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Checkin service]"
+                      name="Checkin service"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight service]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Inflight service]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight service]"
+                      name="Inflight service"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Cleanliness]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Cleanliness]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Cleanliness]"
+                      name="Cleanliness"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Rating ID ]"
+                      dataType="r8"
+                      name="Rating ID " />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Flight Experience ID ]"
+                      dataType="r8"
+                      name="Flight Experience ID " />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Inflight wifi service]"
+                      dataType="r8"
+                      name="Inflight wifi service" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Departure/Arrival time convenient]"
+                      dataType="r8"
+                      name="Departure/Arrival time convenient" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Ease of Online booking]"
+                      dataType="r8"
+                      name="Ease of Online booking" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Gate location]"
+                      dataType="r8"
+                      name="Gate location" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Food and drink]"
+                      dataType="r8"
+                      name="Food and drink" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Online boarding]"
+                      dataType="r8"
+                      name="Online boarding" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Seat comfort]"
+                      dataType="r8"
+                      name="Seat comfort" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Inflight entertainment]"
+                      dataType="r8"
+                      name="Inflight entertainment" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[On-board service]"
+                      dataType="r8"
+                      name="On-board service" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Leg room service]"
+                      dataType="r8"
+                      name="Leg room service" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Baggage handling]"
+                      dataType="r8"
+                      name="Baggage handling" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Checkin service]"
+                      dataType="r8"
+                      name="Checkin service" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Inflight service]"
+                      dataType="r8"
+                      name="Inflight service" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].ExternalColumns[Cleanliness]"
+                      dataType="r8"
+                      name="Cleanliness" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Rating ID ]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Rating ID ]"
+                      name="Rating ID " />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Flight Experience ID ]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Flight Experience ID ]"
+                      name="Flight Experience ID " />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Inflight wifi service]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Inflight wifi service]"
+                      name="Inflight wifi service" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Departure/Arrival time convenient]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Departure/Arrival time convenient]"
+                      name="Departure/Arrival time convenient" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Ease of Online booking]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Ease of Online booking]"
+                      name="Ease of Online booking" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Gate location]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Gate location]"
+                      name="Gate location" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Food and drink]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Food and drink]"
+                      name="Food and drink" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Online boarding]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Online boarding]"
+                      name="Online boarding" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Seat comfort]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Seat comfort]"
+                      name="Seat comfort" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Inflight entertainment]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Inflight entertainment]"
+                      name="Inflight entertainment" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[On-board service]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[On-board service]"
+                      name="On-board service" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Leg room service]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Leg room service]"
+                      name="Leg room service" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Baggage handling]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Baggage handling]"
+                      name="Baggage handling" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Checkin service]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Checkin service]"
+                      name="Checkin service" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Inflight service]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Inflight service]"
+                      name="Inflight service" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Cleanliness]"
+                      dataType="r8"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[Cleanliness]"
+                      name="Cleanliness" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ServiceRating Staging Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgServiceRating]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Cleanliness]"
+                      cachedDataType="r8"
+                      cachedName="Cleanliness"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cleanliness]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Cleanliness]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Flight Experience ID ]"
+                      cachedDataType="r8"
+                      cachedName="Flight Experience ID "
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightExperienceID]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Flight Experience ID ]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Inflight wifi service]"
+                      cachedDataType="r8"
+                      cachedName="Inflight wifi service"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[InflightWifiService]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight wifi service]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Departure/Arrival time convenient]"
+                      cachedDataType="r8"
+                      cachedName="Departure/Arrival time convenient"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepartureArrivalTimeConvenient]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Departure/Arrival time convenient]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Ease of Online booking]"
+                      cachedDataType="r8"
+                      cachedName="Ease of Online booking"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[EaseOfOnlineBooking]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Ease of Online booking]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Gate location]"
+                      cachedDataType="r8"
+                      cachedName="Gate location"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[GateLocation]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Gate location]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Food and drink]"
+                      cachedDataType="r8"
+                      cachedName="Food and drink"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[FoodAndDrink]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Food and drink]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Online boarding]"
+                      cachedDataType="r8"
+                      cachedName="Online boarding"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[OnlineBoarding]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Online boarding]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Seat comfort]"
+                      cachedDataType="r8"
+                      cachedName="Seat comfort"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeatComfort]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Seat comfort]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Inflight entertainment]"
+                      cachedDataType="r8"
+                      cachedName="Inflight entertainment"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[InflightEntertainment]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight entertainment]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[On-board service]"
+                      cachedDataType="r8"
+                      cachedName="On-board service"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[OnBoardService]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[On-board service]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Leg room service]"
+                      cachedDataType="r8"
+                      cachedName="Leg room service"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[LegRoomService]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Leg room service]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Baggage handling]"
+                      cachedDataType="r8"
+                      cachedName="Baggage handling"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[BaggageHandling]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Baggage handling]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Checkin service]"
+                      cachedDataType="r8"
+                      cachedName="Checkin service"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[CheckinService]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Checkin service]" />
+                    <inputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].Columns[Inflight service]"
+                      cachedDataType="r8"
+                      cachedName="Inflight service"
+                      externalMetadataColumnId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[InflightService]"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output].Columns[Inflight service]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightExperienceID]"
+                      dataType="i4"
+                      name="FlightExperienceID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[InflightWifiService]"
+                      dataType="i4"
+                      name="InflightWifiService" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepartureArrivalTimeConvenient]"
+                      dataType="i4"
+                      name="DepartureArrivalTimeConvenient" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[EaseOfOnlineBooking]"
+                      dataType="i4"
+                      name="EaseOfOnlineBooking" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[GateLocation]"
+                      dataType="i4"
+                      name="GateLocation" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[FoodAndDrink]"
+                      dataType="i4"
+                      name="FoodAndDrink" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[OnlineBoarding]"
+                      dataType="i4"
+                      name="OnlineBoarding" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeatComfort]"
+                      dataType="i4"
+                      name="SeatComfort" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[InflightEntertainment]"
+                      dataType="i4"
+                      name="InflightEntertainment" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[OnBoardService]"
+                      dataType="i4"
+                      name="OnBoardService" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[LegRoomService]"
+                      dataType="i4"
+                      name="LegRoomService" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[BaggageHandling]"
+                      dataType="i4"
+                      name="BaggageHandling" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[CheckinService]"
+                      dataType="i4"
+                      name="CheckinService" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[InflightService]"
+                      dataType="i4"
+                      name="InflightService" />
+                    <externalMetadataColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cleanliness]"
+                      dataType="i4"
+                      name="Cleanliness" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load ServiceRating to Staging.Paths[Excel Source Output]"
+              endId="Package\Load ServiceRating to Staging\ServiceRating Staging Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Load ServiceRating to Staging\ServiceRating Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load TravelClass to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E121DED9-020B-4D93-BA64-736FCAAB9C06}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load TravelClass to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load TravelClass to Staging\TravelClass Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="TravelClass Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load TravelClass to Staging\TravelClass Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].Columns[ClassID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].ExternalColumns[ClassID]"
+                      length="50"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].Columns[ClassID]"
+                      name="ClassID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].Columns[ClassName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].ExternalColumns[ClassName]"
+                      length="50"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].Columns[ClassName]"
+                      name="ClassName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].ExternalColumns[ClassID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ClassID" />
+                    <externalMetadataColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].ExternalColumns[ClassName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ClassName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load TravelClass to Staging\TravelClass Staging Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="TravelClass Staging Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgTravelClass]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input].Columns[ClassID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ClassID"
+                      externalMetadataColumnId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassID]"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].Columns[ClassID]" />
+                    <inputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input].Columns[ClassName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ClassName"
+                      externalMetadataColumnId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassName]"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output].Columns[ClassName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassID]"
+                      dataType="i4"
+                      name="ClassID" />
+                    <externalMetadataColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ClassName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load TravelClass to Staging.Paths[Flat File Source Output]"
+              endId="Package\Load TravelClass to Staging\TravelClass Staging Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load TravelClass to Staging\TravelClass Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load TravelType to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DB2EE0D1-C4D7-4E0F-9B42-65D988231FE2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load TravelType to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load TravelType to Staging\TravelType Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="TravelType Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load TravelType to Staging\TravelType Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].Columns[Travel Type ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].ExternalColumns[Travel Type ID]"
+                      length="50"
+                      lineageId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].Columns[Travel Type ID]"
+                      name="Travel Type ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].Columns[Type of Travel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].ExternalColumns[Type of Travel]"
+                      length="50"
+                      lineageId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].Columns[Type of Travel]"
+                      name="Type of Travel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].ExternalColumns[Travel Type ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Travel Type ID" />
+                    <externalMetadataColumn
+                      refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].ExternalColumns[Type of Travel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Type of Travel" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load TravelType to Staging\TravelType Staging Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="TravelType Staging Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgTravelType]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load TravelType to Staging\TravelType Staging Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-GFKCQ07P\MSSQLSERVER2.flight_Staging.Sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input].Columns[Travel Type ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Travel Type ID"
+                      externalMetadataColumnId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[TravelTypeID]"
+                      lineageId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].Columns[Travel Type ID]" />
+                    <inputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input].Columns[Type of Travel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Type of Travel"
+                      externalMetadataColumnId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[TravelTypeName]"
+                      lineageId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output].Columns[Type of Travel]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[TravelTypeID]"
+                      dataType="i4"
+                      name="TravelTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[TravelTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TravelTypeName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load TravelType to Staging\TravelType Staging Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load TravelType to Staging\TravelType Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load TravelType to Staging\TravelType Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load TravelType to Staging\TravelType Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load TravelType to Staging.Paths[Flat File Source Output]"
+              endId="Package\Load TravelType to Staging\TravelType Staging Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load TravelType to Staging\TravelType Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{528CCC4B-5820-4870-B3CF-60D225AD9FD6}"
+      DTS:From="Package\Load Passenger to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load FlightExperience to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{46000450-38F0-48F9-9350-F3F39AC5DD8E}"
+      DTS:From="Package\Load FlightExperience to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load TravelClass to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{107C8147-135C-49D2-89F5-F8F74E06694D}"
+      DTS:From="Package\Load TravelClass to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load TravelType to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D151825B-3F91-4663-826F-69A46F91624F}"
+      DTS:From="Package\Load TravelType to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Load ServiceRating to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{F690FAA8-3DAC-4B23-AB39-54353534BA5F}"
+      DTS:From="Package\Load ServiceRating to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Execute Flight_Load_DW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Execute Flight_Load_DW"
+          TopLeft="201.666655648086,411.666663803988" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\Load FlightExperience to Staging"
+          TopLeft="184.999989892046,85.7999994033575" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\Load Passenger to Staging"
+          TopLeft="202.499988935888,10.3999999276797" />
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Load ServiceRating to Staging"
+          TopLeft="187.499989755452,344.06666427407" />
+        <NodeLayout
+          Size="208.8,41.6"
+          Id="Package\Load TravelClass to Staging"
+          TopLeft="194.166656057868,168.133332164155" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Load TravelType to Staging"
+          TopLeft="189.999989618858,256.533331549432" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="302.349989413967,51.9999999276797">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.7999994756778"
+              Start="0,0"
+              End="0,26.2999994756778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2999994756778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="299.583322974957,127.399999403357">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.7333327607977"
+              Start="0,0"
+              End="0,33.2333327607977">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2333327607977" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="297.083322838363,209.733332164155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.7999993852773"
+              Start="0,0"
+              End="0,39.2999993852773">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2999993852773" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="296.149989687155,298.133331549433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.9333327246375"
+              Start="0,0"
+              End="0,38.4333327246375">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.4333327246375" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="298.183322701769,385.66666427407">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.999999529918"
+              Start="0,0"
+              End="0,18.499999529918">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.499999529918" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load FlightExperience to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="248.8,41.6"
+          Id="Package\Load FlightExperience to Staging\FlightExperience Staging Destination"
+          TopLeft="582.999991312623,340.999994918704" />
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Load FlightExperience to Staging\FlightExperience Source"
+          TopLeft="338.999994948506,139.999997913837" />
+        <EdgeLayout
+          Id="Package\Load FlightExperience to Staging.Paths[OLE DB Source Output]"
+          TopLeft="434.999994948506,181.599997913837">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="272.399996364117,159.399997004867"
+              Start="0,0"
+              End="272.399996364117,151.899997004867">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.6999985024335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,75.6999985024335"
+                    Point2="0,79.6999985024335"
+                    Point3="4,79.6999985024335" />
+                  <mssgle:LineSegment
+                    End="268.399996364117,79.6999985024335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="268.399996364117,79.6999985024335"
+                    Point2="272.399996364117,79.6999985024335"
+                    Point3="272.399996364117,83.6999985024335" />
+                  <mssgle:LineSegment
+                    End="272.399996364117,151.899997004867" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load FlightExperience to Staging\FlightExperience Staging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load FlightExperience to Staging\FlightExperience Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Passenger to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="220.8,41.6"
+          Id="Package\Load Passenger to Staging\Passenger Staging Destination"
+          TopLeft="495.833306242195,269.533331459032" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Load Passenger to Staging\Passenger Source"
+          TopLeft="397.499978281558,117.866665847037" />
+        <EdgeLayout
+          Id="Package\Load Passenger to Staging.Paths[Flat File Source Output]"
+          TopLeft="479.499978281558,159.466665847037">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.733327960637,110.066665611995"
+              Start="0,0"
+              End="126.733327960637,102.566665611995">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.0333328059975" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.0333328059975"
+                    Point2="0,55.0333328059975"
+                    Point3="4,55.0333328059975" />
+                  <mssgle:LineSegment
+                    End="122.733327960637,55.0333328059975" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.733327960637,55.0333328059975"
+                    Point2="126.733327960637,55.0333328059975"
+                    Point3="126.733327960637,59.0333328059975" />
+                  <mssgle:LineSegment
+                    End="126.733327960637,102.566665611995" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Passenger to Staging\Passenger Staging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load ServiceRating to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Load ServiceRating to Staging\ServiceRating Source"
+          TopLeft="252.999996230006,114.999998286366" />
+        <NodeLayout
+          Size="236,41.6"
+          Id="Package\Load ServiceRating to Staging\ServiceRating Staging Destination"
+          TopLeft="255.999996185303,217.999996751547" />
+        <EdgeLayout
+          Id="Package\Load ServiceRating to Staging.Paths[Excel Source Output]"
+          TopLeft="342.599996230006,156.599998286366">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.3999999552966,61.3999984651807"
+              Start="0,0"
+              End="31.3999999552966,53.8999984651807">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6999992325904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.6999992325904"
+                    Point2="0,30.6999992325904"
+                    Point3="4,30.6999992325904" />
+                  <mssgle:LineSegment
+                    End="27.3999999552966,30.6999992325904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.3999999552966,30.6999992325904"
+                    Point2="31.3999999552966,30.6999992325904"
+                    Point3="31.3999999552966,34.6999992325904" />
+                  <mssgle:LineSegment
+                    End="31.3999999552966,53.8999984651807" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ServiceRating to Staging\ServiceRating Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ServiceRating to Staging\ServiceRating Staging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load TravelClass to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="226.4,41.6"
+          Id="Package\Load TravelClass to Staging\TravelClass Staging Destination"
+          TopLeft="342.999994888902,198.999997034668" />
+        <NodeLayout
+          Size="177.6,45.6"
+          Id="Package\Load TravelClass to Staging\TravelClass Source"
+          TopLeft="294.999995604157,85.9999987185002" />
+        <EdgeLayout
+          Id="Package\Load TravelClass to Staging.Paths[Flat File Source Output]"
+          TopLeft="383.799995604157,131.5999987185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.399999284745,67.3999983161683"
+              Start="0,0"
+              End="72.399999284745,59.8999983161683">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.6999991580842" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.6999991580842"
+                    Point2="0,33.6999991580842"
+                    Point3="4,33.6999991580842" />
+                  <mssgle:LineSegment
+                    End="68.399999284745,33.6999991580842" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.399999284745,33.6999991580842"
+                    Point2="72.399999284745,33.6999991580842"
+                    Point3="72.399999284745,37.6999991580842" />
+                  <mssgle:LineSegment
+                    End="72.399999284745,59.8999983161683" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load TravelClass to Staging\TravelClass Staging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load TravelType to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\Load TravelType to Staging\TravelType Staging Destination"
+          TopLeft="265.999996036291,182.999997273088" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Load TravelType to Staging\TravelType Source"
+          TopLeft="257.9999961555,65.9999990165234" />
+        <EdgeLayout
+          Id="Package\Load TravelType to Staging.Paths[Flat File Source Output]"
+          TopLeft="341.1999961555,107.599999016523">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.3999998807914,75.3999982565644"
+              Start="0,0"
+              End="36.3999998807914,67.8999982565644">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.6999991282822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.6999991282822"
+                    Point2="0,37.6999991282822"
+                    Point3="4,37.6999991282822" />
+                  <mssgle:LineSegment
+                    End="32.3999998807914,37.6999991282822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.3999998807914,37.6999991282822"
+                    Point2="36.3999998807914,37.6999991282822"
+                    Point3="36.3999998807914,41.6999991282822" />
+                  <mssgle:LineSegment
+                    End="36.3999998807914,67.8999982565644" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load TravelType to Staging\TravelType Staging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
