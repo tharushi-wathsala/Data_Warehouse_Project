@@ -1,0 +1,89 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>flight_DW</Database>
+    <Server>LAPTOP-GFKCQ07P\MSSQLSERVER3</Server>
+    <ConnectionString>Data Source=LAPTOP-GFKCQ07P\MSSQLSERVER3;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>OxqsDtFS4vaMtfVyUAGKaDOWRC0=4/2/2026 1:18:26 PM4/2/2026 10:10:58 AM</TimeStamp>
+        <ID>
+          <String>Flight DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>vEDD2aXtj+qmOCFsUPYy+Gwb7Ng=4/2/2026 10:19:16 AM4/2/2026 10:14:14 AM</TimeStamp>
+        <ID>
+          <String>Flight DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>YgWRFSA2Snbykw3SBp/hrO4ic6w=4/2/2026 11:38:18 AM4/2/2026 10:19:16 AM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>4ssSyJd1AUMlCw/CQwm97DnfsHc=4/2/2026 11:38:18 AM4/2/2026 10:19:16 AM</TimeStamp>
+        <ID>
+          <String>Dim Travel Class</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3TYiKptfSlaoX8o6hXEwMcAQOU4=4/2/2026 11:38:18 AM4/2/2026 10:19:16 AM</TimeStamp>
+        <ID>
+          <String>Dim Travel Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>agIu4mdZ/uYu0G6ufyNnebSZqfs=4/2/2026 11:38:18 AM4/2/2026 10:19:16 AM</TimeStamp>
+        <ID>
+          <String>Dim Passenger</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>8IYKUc5K0A1buKtmFGjcW/wzZqE=4/2/2026 10:19:16 AM4/2/2026 10:19:16 AM</TimeStamp>
+        <ID>
+          <String>Fact Flight Experience</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>5/q8Bl+JfSL5zwlTjBbpyODZHUo=4/2/2026 11:38:18 AM4/2/2026 10:19:16 AMhIMU7qptKo3NR/C8Th7s9FlZsKk=4/2/2026 10:19:16 AM4/2/2026 10:19:16 AM</TimeStamp>
+        <ID>
+          <String>Flight DW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>aqpeIOXUH2B2LUkenSzzZsl1NYA=4/2/2026 10:00:43 AM4/2/2026 10:00:43 AM</TimeStamp>
+      <ID>
+        <String>flight_DW</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2026-04-02T07:59:47.336667Z</LastDeployed>
+</DeploymentSnapshot>
